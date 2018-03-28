@@ -1,0 +1,37 @@
+.labelHeader {
+    width: 50px;
+    margin-top: 5px;
+}
+
+.inputHeader {
+    width: 350px;
+}
+
+.addressesListClass {
+    margin-top: 10px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.addressElement {
+    border: solid 2px black;
+    display: flex;
+    margin: 2px;
+}
+
+.cellAddressElement {
+    width: 25%;
+    padding: 5px;
+    border: solid 1px black;
+}
+
+.addressElement:hover {
+    background: rgba(83,173,191,0.58);
+    transition: 0.5s;
+}
+
+#buttAddAddress {
+    margin-left: 58px;
+}
