@@ -5,7 +5,7 @@ class Controller_Cities extends Controller
 {
     //Метод вывода страницы стправочника "Города"
     public function index() {
-        $this->viewer->rend("cities.html");
+        $this->viewer->rend("cities.php");
     }
 
     //Метод загрузки городов из БД MySQL в grid.js через json

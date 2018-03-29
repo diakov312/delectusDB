@@ -4,8 +4,6 @@
     var countriesInput = document.getElementById("countriesListId");
     countriesInput.addEventListener("change", getDataFilter);
 
-    var countriesButton = document.getElementsByName("");
-
     //Событие выбора города
     var citiesInput = document.getElementById("citiesListId");
     citiesInput.addEventListener("change", getDataFilter);
@@ -33,5 +31,21 @@
     //Отслеживание клика на адресе и отправка данных на DelectusCard
     $("body").on("click", ".addressElement", function (e) {
         sendAddressInf($(this).data());
-    })
+    });
+
+    //Отслеживаем клик на ссылке справочника адресов и отправляем страну
+    var linkCity = document.getElementById("idLinkAddressList");
+    linkCity.addEventListener("click", function () {
+        var nameCountry = document.getElementById("countriesListId");
+
+        var inputNameCountry = document.createElement("input");
+        inputNameCountry.setAttribute("type", "hidden");
+        inputNameCountry.setAttribute("name", 'nameCountry');
+        inputNameCountry.setAttribute("value", nameCountry.value);
+
+        var form = document.getElementById("formSendCityListInf");
+
+        form.appendChild(inputNameCountry);
+        form.submit();
+    });
 }());

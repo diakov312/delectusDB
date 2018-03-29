@@ -7,6 +7,7 @@
     <title>Города</title>
 </head>
 <body>
+<h1 >Страна: <?php echo $_POST[nameCountry] ?></h1>
 <h1>Справочник городов:</h1>
 <div id="jsGridCities"></div>
 <a href="/Main/index">Главная</a>

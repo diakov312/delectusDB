@@ -25,7 +25,8 @@
     <input class="inputHeader" id="citiesListId" type="text" list="citiesList" name="cytiSelect">
     <button>Поиск</button>
     <button id="buttAddCity">Добавить</button>
-    <a href="/Cities/index">Справочник городов</a><br>
+    <a href="/Cities/index">Справочник городов</a>
+    <button id="idLinkAddressList">справочник</button><br>
     <datalist id="citiesList">
         %2$s
     </datalist>
@@ -53,6 +54,7 @@
     </div>
 
     <form action="/DelectusCard/index" method="post" id="formSendAddressInf"></form>
+    <form action="/Cities/index" method="post" id="formSendCityListInf"></form>
 
     <script src="/frontend/js/jquery-3.3.1.min.js"></script>
     <script src="/frontend/js/mainPage/replaceOptions.js"></script>

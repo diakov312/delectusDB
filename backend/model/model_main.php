@@ -7,13 +7,13 @@ class Model_Main
     public function getDataMainPage() {
         $pdo = new PDO(DSN, DB_USERNAME,DB_PASSWORD);
         $dataCountries = $pdo
-            ->query("SELECT DISTINCT name_country AS countryName FROM country")
+            ->query("SELECT DISTINCT name_country AS countryName FROM country ORDER BY name_country")
             ->fetchAll(PDO::FETCH_COLUMN);
         $dataCities = $pdo
-            ->query("SELECT DISTINCT name_city AS cityName FROM cities")
+            ->query("SELECT DISTINCT name_city AS cityName FROM cities ORDER BY name_city")
             ->fetchAll(PDO::FETCH_COLUMN);
         $dataOrganization = $pdo
-            ->query("SELECT DISTINCT name_organization AS organizationName FROM organization")
+            ->query("SELECT DISTINCT name_organization AS organizationName FROM organization ORDER BY name_organization")
             ->fetchAll(PDO::FETCH_COLUMN);
         $data = array("Countries" => $dataCountries, "Cities" => $dataCities, "Organization" => $dataOrganization);
         return $data;
@@ -59,6 +59,10 @@ class Model_Main
             $tempQueryOrganizations = $tempQueryOrganizations." ".$varOperait." name_organization=:organizationSelect";
             $tempQueryAdresses = $tempQueryAdresses." ".$varOperait." name_organization=:organizationSelect";
         }
+
+        $tempQueryCountries = $tempQueryCountries." ORDER BY name_country";
+        $tempQueryCities = $tempQueryCities." ORDER BY name_city";
+        $tempQueryOrganizations = $tempQueryOrganizations." ORDER BY name_organization";
 
         $queryCountries = $pdo->prepare($tempQueryCountries);
         $queryCities = $pdo->prepare($tempQueryCities);
