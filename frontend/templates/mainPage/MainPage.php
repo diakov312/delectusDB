@@ -25,8 +25,8 @@
     <input class="inputHeader" id="citiesListId" type="text" list="citiesList" name="cytiSelect">
     <button>Поиск</button>
     <button id="buttAddCity">Добавить</button>
-    <a href="/Cities/index">Справочник городов</a>
-    <button id="idLinkAddressList">справочник</button><br>
+    <!--<a href="/Cities/index">Справочник городов</a>-->
+    <button id="idLinkAddressList">Справочник городов</button><br>
     <datalist id="citiesList">
         %2$s
     </datalist>

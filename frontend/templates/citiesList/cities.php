@@ -7,19 +7,10 @@
     <title>Города</title>
 </head>
 <body>
-    <?php
-    if (!empty($_POST[nameCountry])) {
-        echo "<h1 data-countrySelect='".$_POST[nameCountry]."'>Страна: ".$_POST[nameCountry]."</h1>";
-    }
-    ?>
     <label for="inputCountriesFilter">Страна:</label>
-    <input id="inputCountriesFilter" type="text" value="<?php
-        if (!empty($_POST[nameCountry])) {
-            echo $_POST[nameCountry];
-        }
-    ?>">
-    <datalist id="inputCountriesFilter">
-
+    <input id="inputCountriesFilter" list="countriesList" type="text" value="">
+    <datalist id="countriesList">
+        %s
     </datalist>
     <h1>Справочник городов:</h1>
     <div id="jsGridCities"></div>

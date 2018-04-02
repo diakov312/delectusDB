@@ -3,6 +3,15 @@
 //Класс модели.Логика работы со справочником городов.
 class Model_Cities
 {
+    //Метод получения списка стран, для фильтра.
+    public function getCountryList() {
+        $pdo = new PDO(DSN, DB_USERNAME,DB_PASSWORD);
+        $queryCountryList = $pdo->prepare("SELECT name_country FROM country ORDER BY name_country");
+        $queryCountryList->execute();
+        $dataCountryList = $queryCountryList->fetchAll(PDO::FETCH_COLUMN);
+        return array("Countries" => $dataCountryList);
+    }
+
     //Метод получения данных городов, из базы данных
     public function loadData() {
         $pdo = new PDO(DSN, DB_USERNAME,DB_PASSWORD);
@@ -50,4 +59,6 @@ class Model_Cities
         $statementDelete->execute();
         return null;
     }
+
+    //Метод получения стран для фильтра из БД
 }
