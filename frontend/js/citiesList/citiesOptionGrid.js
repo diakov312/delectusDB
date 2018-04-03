@@ -1,4 +1,5 @@
-$(function () {
+//Основные настройки грида справочника городов
+function citiesGrid (countryFilter) {
     $.ajax({
         type: "POST",
         url: "/Countries/loadData"
@@ -18,6 +19,7 @@ $(function () {
             controller: {
                 loadData: function() {
                     return $.ajax({
+                        data: {countryFilter: countryFilter},
                         type: "POST",
                         url: "/Cities/loadData"
                     });
@@ -53,4 +55,4 @@ $(function () {
             ]
         });
     });
-});
+}

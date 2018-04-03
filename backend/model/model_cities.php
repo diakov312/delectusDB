@@ -15,7 +15,19 @@ class Model_Cities
     //Метод получения данных городов, из базы данных
     public function loadData() {
         $pdo = new PDO(DSN, DB_USERNAME,DB_PASSWORD);
-        $queryInsCities = $pdo->prepare("SELECT id_city, name_city AS cityName, id_country AS countryId FROM cities");
+        $queryTempCities = "SELECT id_city, name_city AS cityName, ci.id_country AS countryId FROM cities ci"
+            ." JOIN country co ON ci.id_country=co.id_country";
+
+        if (!empty($_POST[countryFilter])) {
+            $queryTempCities = $queryTempCities." WHERE name_country=:countryName";
+        }
+
+        $queryInsCities = $pdo->prepare($queryTempCities);
+
+        if (!empty($_POST[countryFilter])) {
+            $queryInsCities->bindParam(":countryName", $_POST[countryFilter]);
+        }
+
         $queryInsCities->execute();
         $dataCities = $queryInsCities->fetchAll(PDO::FETCH_OBJ);
         return $dataCities;

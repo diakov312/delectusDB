@@ -28,6 +28,6 @@
     <script src="/frontend/js/jquery-3.3.1.min.js"></script>
     <script src="/frontend/js/jsgrid.js"></script>
     <script src="/frontend/js/jsgrid.min.js"></script>
-    <script src="/frontend/js/referensBooks/citiesOptionGrid.js"></script>
+    <script src="/frontend/js/citiesList/citiesOptionGrid.js"></script>
 </body>
 </html>

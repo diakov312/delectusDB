@@ -8,9 +8,9 @@
 </head>
 <body>
     <label for="inputCountriesFilter">Страна:</label>
-    <input id="inputCountriesFilter" list="countriesList" type="text" value="">
+    <input id="inputCountriesFilter" list="countriesList" type="text" value="%1$s">
     <datalist id="countriesList">
-        %s
+        %2$s
     </datalist>
     <h1>Справочник городов:</h1>
     <div id="jsGridCities"></div>
@@ -19,6 +19,8 @@
     <script src="/frontend/js/jquery-3.3.1.min.js"></script>
     <script src="/frontend/js/jsgrid.js"></script>
     <script src="/frontend/js/jsgrid.min.js"></script>
-    <script src="/frontend/js/referensBooks/citiesOptionGrid.js"></script>
+    <script src="/frontend/js/citiesList/citiesOptionGrid.js"></script>
+    <script src="/frontend/js/citiesList/gridFirstInit.js"></script>
+    <script src="/frontend/js/citiesList/citiesList.js"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@ if ($data !== null) {
     }
 
     $tempCitiesList = sprintf(file_get_contents("frontend/templates/citiesList/cities.php")
-        , $listCountryOptions);
+        , $_POST[nameCountry], $listCountryOptions);
 }
 
 echo $tempCitiesList;
